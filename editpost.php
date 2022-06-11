@@ -10,7 +10,7 @@ if(isset($_POST['submit'])){
     $contact =  $_POST["phone"];
     $specialty = $_POST["specialty"];
 
-    $result = $crud->editAttendee($id, $fname, $lname, $dob, $email, $phone, $specialty);
+    $result = $crud->editAttendee($id, $fname, $lname, $dob, $email, $contact, $specialty);
     if($result){
         header('Location: viewrecords.php');
     } else {
