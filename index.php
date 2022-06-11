@@ -10,15 +10,15 @@ $results = $crud->getSpecialties();
     <form method="POST" action="success.php">
     <div class="form-group">
         <label for="firstname">First Name</label>
-        <input type="text" class="form-control" id="firstname" name="firstname">
+        <input required type="text" class="form-control" id="firstname" name="firstname">
       </div>
       <div class="form-group">
         <label for="lastname">Last Name</label>
-        <input type="text" class="form-control" id="lastname" name="lastname">
+        <input required type="text" class="form-control" id="lastname" name="lastname">
       </div>
       <div class="form-group">
         <label for="dob">Date Of Birth</label>
-        <input type="text" class="form-control" id="dob" name="dob">
+        <input required type="text" class="form-control" id="dob" name="dob">
       </div>
       <div class="form-group">
     <label for="specialty">Specialty</label>
@@ -30,15 +30,15 @@ $results = $crud->getSpecialties();
   </div>
       <div class="form-group">
         <label for="email">Email address</label>
-        <input type="email" class="form-control" id="email" name="email" >
+        <input required type="email" class="form-control" id="email" name="email" >
       </div>
       <div class="form-group">
         <label for="phone">Phone Number</label>
-        <input type="text" class="form-control" id="phone" name="phone">
+        <input required type="text" class="form-control" id="phone" name="phone">
       </div>
       <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" class="form-control" id="password" name="password" >
+        <input required type="password" class="form-control" id="password" name="password" >
       </div>
     <button type="submit" name="submit" class="btn btn-primary btn-block">Submit</button>
     </form>

@@ -5,7 +5,8 @@ require_once 'db/conn.php';
 
 $results = $crud->getSpecialties();
 if(!isset($_GET['id'])){
-    echo 'error';
+    include 'includes/errormessage.php';
+    header('Location: viewrecords.php');
 } else {
     $id = $_GET['id'];
     $attendee = $crud->getAttendeeDetails($id);
@@ -13,18 +14,18 @@ if(!isset($_GET['id'])){
     <h1 class='text-center'>Edit Record</h1>
 
     <form method="POST" action="editpost.php">
-        <input type="hidden" name="id" value="<?php echo $attendee['attendee_id'] ?>"/>
+        <input required type="hidden" name="id" value="<?php echo $attendee['attendee_id'] ?>"/>
     <div class="form-group">
         <label for="firstname">First Name</label>
-        <input type="text" class="form-control" id="firstname" name="firstname" value="<?php echo $attendee['firstname'] ?>">
+        <input required type="text" class="form-control" id="firstname" name="firstname" value="<?php echo $attendee['firstname'] ?>">
       </div>
       <div class="form-group">
         <label for="lastname">Last Name</label>
-        <input type="text" class="form-control" id="lastname" name="lastname" value="<?php echo $attendee['lastname'] ?>">
+        <input required type="text" class="form-control" id="lastname" name="lastname" value="<?php echo $attendee['lastname'] ?>">
       </div>
       <div class="form-group">
         <label for="dob">Date Of Birth</label>
-        <input type="text" class="form-control" id="dob" name="dob" value="<?php echo $attendee['dateofBirth'] ?>">
+        <input required type="text" class="form-control" id="dob" name="dob" value="<?php echo $attendee['dateofBirth'] ?>">
       </div>
       <div class="form-group">
     <label for="specialty">Specialty</label>
@@ -38,11 +39,11 @@ if(!isset($_GET['id'])){
   </div>
       <div class="form-group">
         <label for="email">Email address</label>
-        <input type="email" class="form-control" id="email" name="email" value="<?php echo $attendee['emailaddress'] ?>" >
+        <input required type="email" class="form-control" id="email" name="email" value="<?php echo $attendee['emailaddress'] ?>" >
       </div>
       <div class="form-group">
         <label for="phone">Phone Number</label>
-        <input type="text" class="form-control" id="phone" name="phone" value="<?php echo $attendee['contactnumber'] ?>">
+        <input required type="text" class="form-control" id="phone" name="phone" value="<?php echo $attendee['contactnumber'] ?>">
       </div>
     <button type="submit" name="submit" class="btn btn-success btn-block">Save Changes</button>
     </form>
