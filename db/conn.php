@@ -1,8 +1,8 @@
 <?php
- $host = '127.0.0.1';
- $db = 'attendance_db';
- $user = 'root';
- $pass = '';
+ $host = 'remotemysql.com';
+ $db = 'psORmmetlI';
+ $user = 'psORmmetlI';
+ $pass = 'BlqmDLqObQ';
  $charset = 'utf8mb4';
 
 
