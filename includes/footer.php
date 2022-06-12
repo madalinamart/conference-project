@@ -1,5 +1,5 @@
 </div>
-<div id="footer" class="p-3 bg-primary text-white">
+<div id="footer" class="p-3 mt-4 bg-primary text-white">
 <p class="text-center"> Copyright &copy; - IT Conference Attendance System <?php echo date('Y'); ?> </p>
 </div>
  <!-- Optional JavaScript -->
