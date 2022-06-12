@@ -61,7 +61,7 @@ if(isset($_POST['submit'])){
     }
 }
 ?>
-<img class="img-thumbnail rounded-circle" width="200px" height="200px" src="<?php echo empty($destination) ? "uploads/username.png" : $destination?>" alt="profile image"/>
+<img class="img-thumbnail rounded-circle" width="200" height="200" src="<?php echo empty($destination) ? "uploads/username.png" : $destination?>" alt="profile image"/>
 <div class="card" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">
