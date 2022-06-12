@@ -22,11 +22,21 @@ include_once 'includes/session.php';
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav mr-auto">
-      <a class="nav-item nav-link active" href="index.php">Home</a>
+      <a class="nav-item nav-link" href="index.php">Home</a>
       <a class="nav-item nav-link" href="viewrecords.php">View Attendees</a>
     </div>
     <div class="navbar-nav ml-auto">
+      <!-- CHECK IF SESSION EXISTS -> IF USER IS LOGGED IN SHOW LOGOUT BUTTON IF NOT SHOW LOGIN-->
+      <?php 
+      if(!isset($_SESSION['userid'])){
+      ?>
       <a class="nav-item nav-link active" href="login.php">Login</a>
+      <?php }else { ?>
+      <a class="nav-item nav-link" href="#"><span>Hello <?php echo $_SESSION['username']?>!</span></a>
+      <a class="nav-item nav-link" href="logout.php">Logout</a>
+      <?php
+      }
+      ?>
     </div>
   </div>
 </nav>

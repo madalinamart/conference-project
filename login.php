@@ -11,11 +11,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     $result = $user->getUser($username,$new_password);
     if(!$result){
-        echo '<div class="alert alert-danger>Username or Password is incorrect! Please, try again. </div>';
+        echo '<div class="alert alert-danger">Username or Password is incorrect! Please, try again. </div>';
     } else {
         //SET SESSION FOR THE USER
         $_SESSION['username'] = $username;
-        $_SESSION['id'] = $result['id'];
+        $_SESSION['userid'] = $result['id'];
         header('Location: viewrecords.php');
     }
 }
@@ -41,7 +41,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             <label for="password">Password: *</label>
         </td>
         <td>
-            <input type="text" name="password" class="form-control" id="password">
+            <input type="password" name="password" class="form-control" id="password">
             <?php if (empty($password) && isset($password_error)) echo "<p class='text-danger'>$password_error</p>";?>
         </td>
     </tr>    
