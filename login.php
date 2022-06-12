@@ -7,10 +7,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $username = strtolower(trim($_POST['username']));
     $password = $_POST['password'];
 
-    $new_password = md5($password.$username);
+    $result = $user->getUser($username);
 
-    $result = $user->getUser($username,$new_password);
-    if(!$result){
+    if(!password_verify($password, $result['password'])){
         echo '<div class="alert alert-danger">Username or Password is incorrect! Please, try again. </div>';
     } else {
         //SET SESSION FOR THE USER
@@ -25,10 +24,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 <!-- ACTION = login and do action on the same page -->
 <!-- htmlentities = remove vulnerabilities for sql injections -->
 <form action="<?php echo htmlentities($_SERVER['PHP_SELF']);?>" method="POST">
-<table class="table table-sm">
+<table class="table table-sm mb-4">
     <tr>
         <td>
-            <label for="username">Username: *</label>
+            <label for="username">Email: *</label>
         </td>
         <td>
             <!-- VALUE makes so that when I relog page the username stays in the input-->
@@ -46,10 +45,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         </td>
     </tr>    
 </table>
-</br>
-</br>
 <input type="submit" value="Login" class="btn btn-primary btn-block"/>
-</br>
 <a href="#">Forgot password</a>
 </form>
 

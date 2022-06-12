@@ -12,6 +12,7 @@ if(!isset($_GET['id'])){
     $result = $crud->getAttendeeDetails($id);
 ?>
 
+<img class="img-thumbnail rounded-circle" width="200px" height="200px" src="<?php echo empty($result["avatar_path"]) ? "uploads/username.png" : $result["avatar_path"]?>" alt="profile image"/>
 <div class="card" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">

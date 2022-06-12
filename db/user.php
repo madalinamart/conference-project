@@ -14,8 +14,8 @@
             if($result['num'] > 0) {
                 return false;
             } else {
-            //ENCRYPT PASSWORD -> SALTED PASSWORD
-            $new_password = md5($password.$username);
+            //ENCRYPT PASSWORD
+            $new_password = password_hash($password, PASSWORD_BCRYPT);
             //define sql query
             $sql = "INSERT INTO users(username,password) VALUES (:username, :password)";
             //prepare statement
@@ -33,12 +33,11 @@
         }
     }
 
-    public function getUser($username,$password){
+    public function getUser($username){
         try{
-            $sql = "SELECT * FROM users WHERE username = :username AND password = :password";
+            $sql = "SELECT * FROM users WHERE username = :username";
             $stmt = $this->db->prepare($sql);
             $stmt->bindparam(':username', $username);
-            $stmt->bindparam(':password', $password);
             $stmt->execute();
             $result = $stmt->fetch();
             return $result;  

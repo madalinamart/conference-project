@@ -50,7 +50,7 @@ if(!isset($_GET['id'])){
     <button type="submit" name="submit" class="btn btn-success btn-block">Save Changes</button>
     </form>
 <?php } ?>
-<br>
+
 <?php 
 require_once 'includes/footer.php';
 ?>

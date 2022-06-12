@@ -7,7 +7,7 @@ $results = $crud->getSpecialties();
 ?>
     <h1 class='text-center'>Registration for IT Conference</h1>
 
-    <form method="POST" action="success.php">
+    <form method="POST" action="success.php" enctype="multipart/form-data">
     <div class="form-group">
         <label for="firstname">First Name</label>
         <input required type="text" class="form-control" id="firstname" name="firstname">
@@ -36,13 +36,16 @@ $results = $crud->getSpecialties();
         <label for="phone">Phone Number</label>
         <input required type="text" class="form-control" id="phone" name="phone">
       </div>
+      <div class="custom-file mb-4">
+        <input required type="file" accept="image/*" class="custom-file-input" id="avatar" name="avatar" >
+        <label for="avatar" class="custom-file-label">Choose File</label>
+      </div>
       <div class="form-group">
         <label for="password">Password</label>
-        <input required type="password" class="form-control" id="password" name="password" >
+        <input required type="password" class="form-control" id="password" name="password">
       </div>
     <button type="submit" name="submit" class="btn btn-primary btn-block">Submit</button>
     </form>
-<br>
 <?php 
 require_once 'includes/footer.php';
 ?>
