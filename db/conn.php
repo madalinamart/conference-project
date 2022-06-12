@@ -1,8 +1,14 @@
 <?php
- $host = 'remotemysql.com';
+/*  $host = 'remotemysql.com';
  $db = 'psORmmetlI';
  $user = 'psORmmetlI';
  $pass = 'BlqmDLqObQ';
+ $charset = 'utf8mb4'; */
+
+ $host = '127.0.0.1';
+ $db = 'attendance_db';
+ $user = 'root';
+ $pass = '';
  $charset = 'utf8mb4';
 
 
@@ -16,5 +22,9 @@
  }
 
  require_once 'crud.php';
+ require_once 'user.php';
  $crud = new crud($pdo);
+ $user = new user($pdo);
+
+ $user->insertUser("admin", "password");
 ?>
