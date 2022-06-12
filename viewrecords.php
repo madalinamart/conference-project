@@ -1,7 +1,11 @@
 <?php 
 $title = 'View Records';
+//in the header the session starts
 require_once 'includes/header.php';
+//check if there's a session
+require_once 'includes/auth_check.php';
 require_once 'db/conn.php';
+
 
 $result = $crud->getAttendees();
 ?>
